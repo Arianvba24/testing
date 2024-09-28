@@ -1,5 +1,6 @@
 import streamlit as st
 from playwright.sync_api import sync_playwright
+import setup_playwright
 
 # Function to automate browser interaction
 def run_playwright(query):
