@@ -1,9 +1,8 @@
-import subprocess
-import sys
+import os
 
 def install_playwright():
-    # This command installs all required browsers (Chromium, Firefox, WebKit)
-    subprocess.run([sys.executable, "-m", "playwright", "install", "--with-deps"])
+    os.system('playwright install')
+    os.system('playwright install-deps')
 
 if __name__ == "__main__":
     install_playwright()
