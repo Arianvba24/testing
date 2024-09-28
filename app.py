@@ -4,7 +4,8 @@ from playwright.sync_api import sync_playwright
 # Function to automate browser interaction
 def run_playwright(query):
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=True)  # Launch a browser
+        # Launch browser with additional arguments for Linux environments
+        browser = p.chromium.launch(headless=True, args=['--no-sandbox', '--disable-setuid-sandbox'])
         page = browser.new_page()
         page.goto("https://www.google.com")
 
